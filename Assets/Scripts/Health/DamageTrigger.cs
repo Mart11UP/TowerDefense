@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Tower.Health
     {
         [SerializeField] private string targetTag = "Enemy";
         [SerializeField] private float damageAmount;
+        public event Action OnTrigger;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -17,7 +19,8 @@ namespace Tower.Health
                 Debug.LogWarning(other.name + " doesn't have the IDamageable interface.");
                 return;
             }
-            damageable.RecieveDamage(damageAmount);
+            damageable.ReceiveDamage(damageAmount);
+            OnTrigger?.Invoke();
         }
     }
 }

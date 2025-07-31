@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3915555563912710254}
   - component: {fileID: 6600466061415540164}
   - component: {fileID: 8485773258061927832}
+  - component: {fileID: 7307085600955352232}
   - component: {fileID: 7820737301593121009}
   - component: {fileID: 5153507281281932855}
   - component: {fileID: 5343851762063527937}
   - component: {fileID: 7120389299846083854}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &7307085600955352232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085153519759196992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbd845f15f4f2249b912d00db6a59ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffectPrefab: {fileID: 0}
 --- !u!33 &7820737301593121009
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -133,7 +147,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7120389299846083854
 Rigidbody:

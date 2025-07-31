@@ -6,6 +6,6 @@ namespace Tower.Health
 {
     public interface IDamageable
     {
-        public abstract void RecieveDamage(float amount);
+        public abstract void ReceiveDamage(float amount);
     }
 }
