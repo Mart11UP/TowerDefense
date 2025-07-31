@@ -35,6 +35,7 @@ namespace Tower.Health
             yield return new WaitForSeconds(3);
 
             Destroy(effect.gameObject);
+            Destroy(gameObject);
         }
     }
 }

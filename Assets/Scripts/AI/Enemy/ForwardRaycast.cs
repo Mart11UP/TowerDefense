@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tower.AI
 {
-    public class MeleeAttackTrigger : MonoBehaviour
+    public class ForwardRaycast : MonoBehaviour
     {
         [SerializeField] private Vector3 center;
         [SerializeField] private float maxDistance = 2;
@@ -12,7 +12,6 @@ namespace Tower.AI
         public event Action OnTriggered;
         public event Action OnUnTriggered;
         private bool triggered = false;
-        private EnemyStateMachine enemyStateMachine;
         public RaycastHit LastHitInfo { get; private set; }
         public bool Triggered
         {
@@ -26,22 +25,6 @@ namespace Tower.AI
                 }
                 triggered = value; 
             }
-        }
-
-        private void OnEnable()
-        {
-            enemyStateMachine = GetComponent<EnemyStateMachine>();
-            OnTriggered += ChangeToAttackState;
-        }
-
-        private void OnDisable()
-        {
-            OnTriggered -= ChangeToAttackState;
-        }
-
-        private void ChangeToAttackState()
-        {
-            enemyStateMachine.TransitionToState(EnemyStateMachine.EnemyState.MeleeAttack);
         }
 
         private void Update()

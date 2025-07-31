@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
     [Header("Wait Time Range")]
-    [SerializeField] float minWaitTime = 5;
-    [SerializeField] float maxWaitTime = 10;
+    [SerializeField] private float minWaitTime = 5;
+    [SerializeField] private float maxWaitTime = 10;
+    private IEnumerator spawnerRoutine;
 
     [System.Serializable]
     private struct SpawnObjectData
@@ -26,7 +26,18 @@ public class RandomSpawner : MonoBehaviour
         for (int i = 0; i < spawnObjects.Length; i++) 
             weights[i] = spawnObjects[i].weight;
 
+        spawnerRoutine = SpawnAtRandomIntervals();
         StartCoroutine(SpawnAtRandomIntervals());
+    }
+
+    public void StartSpawner()
+    {
+        StartCoroutine(spawnerRoutine);
+    }
+
+    public void StopSpawner()
+    {
+        StopCoroutine(spawnerRoutine);
     }
 
     private IEnumerator SpawnAtRandomIntervals()
@@ -50,7 +61,7 @@ public class RandomSpawner : MonoBehaviour
         int index = GetIndexByWeight(weights);
         GameObject prefab = spawnObjects[index].prefab;
 
-        GameObject instance = Instantiate(prefab, position, Quaternion.identity);
+        Instantiate(prefab, position, transform.rotation);
     }
 
     int GetIndexByWeight(float[] weights)

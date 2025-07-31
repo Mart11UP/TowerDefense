@@ -4,23 +4,19 @@ using UnityEngine;
 
 namespace Tower.Player
 {
-    public class InputMovement : MonoBehaviour
+    public class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private float speed = 10;
         private CharacterController characterController;
-        private Vector3 input;
 
-        // Start is called before the first frame update
         void Start()
         {
             characterController = GetComponent<CharacterController>();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void MoveCharacter(Vector3 movement)
         {
-            input = new(Input.GetAxis("Horizontal"), 0, 0);
-            characterController.SimpleMove(input * speed);
+            characterController.SimpleMove(movement * speed);
         }
     }
 }

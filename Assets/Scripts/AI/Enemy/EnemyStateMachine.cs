@@ -8,12 +8,12 @@ namespace Tower.AI.Enemy
     public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyState>
     {
         private HealthController enemyHealth;
-        private MeleeAttackTrigger damagableDetector;
+        private ForwardRaycast damagableDetector;
 
         public enum EnemyState
         {
             WalkToTower,
-            MeleeAttack,
+            Attack,
             Died
         }
 
@@ -21,7 +21,8 @@ namespace Tower.AI.Enemy
         {
             States.Add(EnemyState.WalkToTower, new WalkToTowerState(EnemyState.WalkToTower, gameObject));
             States.Add(EnemyState.Died, new DiedState(EnemyState.Died, gameObject));
-            States.Add(EnemyState.MeleeAttack, new MeleeAttackState(EnemyState.MeleeAttack, gameObject));
+            States.Add(EnemyState.Attack, new AttackState(EnemyState.Attack, gameObject));
+
             CurrentState = States[EnemyState.WalkToTower];
             enemyHealth = GetComponent<HealthController>();
             enemyHealth.OnDied += ChangeToDiedState;
@@ -38,15 +39,31 @@ namespace Tower.AI.Enemy
             TransitionToState(EnemyState.Died);
         }
 
-        public override void TransitionToState(EnemyState stateKey)
+        private bool IsAValidState(EnemyState stateKey)
         {
             if (CurrentState.StateKey == EnemyState.Died)
             {
                 Debug.LogWarning("Cannot transition to any state while in the '" + EnemyState.Died + "' state.");
-                return;
+                return false;
             }
-            if (CurrentState.StateKey == stateKey) return;
+            if (CurrentState.StateKey == stateKey) return false;
+
+            return true;
+        }
+
+        public override void TransitionToState(EnemyState stateKey)
+        {
+            if (!IsAValidState(stateKey)) return;
             base.TransitionToState(stateKey);
+        }
+
+        public void ChangeToAttackState(Attack attack = null)
+        {
+            if (!IsAValidState(EnemyState.Attack)) return;
+
+            AttackState attackState = (AttackState)States[EnemyState.Attack];
+            if (attack != null) attackState.SetAttack(attack);
+            TransitionToState(EnemyState.Attack);
         }
     }
 }
