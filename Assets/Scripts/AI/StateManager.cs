@@ -25,7 +25,7 @@ public class StateManager<State> : MonoBehaviour where State : Enum
     }
 
 
-    public void TransitionToState(State stateKey)
+    public virtual void TransitionToState(State stateKey)
     {
         IsTransitionState = true;
         CurrentState.ExitState();

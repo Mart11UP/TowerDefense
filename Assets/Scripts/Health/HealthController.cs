@@ -2,7 +2,7 @@ using System;
 using Tower.Health;
 using UnityEngine;
 
-namespace Tower.AI.Enemy
+namespace Tower.Health
 {
     public class HealthController : MonoBehaviour, IDamageable
     {
