@@ -12,7 +12,7 @@ public class RandomSpawner : MonoBehaviour
     private struct SpawnObjectData
     {
         public GameObject prefab;
-        [Range(1, 100)]
+        [Range(1, 1000)]
         public float weight;
     }
 
@@ -50,7 +50,7 @@ public class RandomSpawner : MonoBehaviour
         int index = GetIndexByWeight(weights);
         GameObject prefab = spawnObjects[index].prefab;
 
-        Instantiate(prefab, position, Quaternion.identity);
+        GameObject instance = Instantiate(prefab, position, Quaternion.identity);
     }
 
     int GetIndexByWeight(float[] weights)

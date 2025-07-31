@@ -1,0 +1,17 @@
+{
+    "name": "Tower.AI.Enemy",
+    "rootNamespace": "Tower.AI.Enemy",
+    "references": [
+        "GUID:13f580eb58a08c244856b21ff2f0a081",
+        "GUID:fb928946758eb7448a6c8dd4dfc82ad6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
