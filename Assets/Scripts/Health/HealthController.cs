@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Tower.Health
 {
@@ -8,7 +9,7 @@ namespace Tower.Health
         [SerializeField] private float maxHealth = 1;
         private float currentHealth;
         public event Action<float> OnDamageReceived;
-        public event Action OnDied;
+        public UnityEvent OnDied;
 
         public float CurrentHealth 
         { 

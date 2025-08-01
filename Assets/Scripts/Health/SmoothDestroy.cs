@@ -3,28 +3,17 @@ using UnityEngine;
 
 namespace Tower.Health
 {
-    public class DestroyOnTrigger : MonoBehaviour
+    public class SmoothDestroy : MonoBehaviour
     {
         [SerializeField] private ParticleSystem destroyEffectPrefab;
-        private DamageTrigger damageTrigger;
 
-        // Start is called before the first frame update
-        void Start()
+        public void Destroy()
         {
-            damageTrigger = GetComponent<DamageTrigger>();
-            damageTrigger.OnTrigger += Destroy;
-        }
-
-        private void OnDisable()
-        {
-            damageTrigger.OnTrigger -= Destroy;
-        }
-
-        private void Destroy()
-        {
-            foreach(var component in GetComponents<Component>())
+            foreach (var component in GetComponents<Component>())
                 if (component != this && component != transform) Destroy(component);
             if (destroyEffectPrefab != null) StartCoroutine(DestroyEffect());
+
+            StartCoroutine(DestroyDelay(2));
         }
 
         private IEnumerator DestroyEffect()
@@ -35,6 +24,12 @@ namespace Tower.Health
             yield return new WaitForSeconds(3);
 
             Destroy(effect.gameObject);
+        }
+
+        private IEnumerator DestroyDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
             Destroy(gameObject);
         }
     }

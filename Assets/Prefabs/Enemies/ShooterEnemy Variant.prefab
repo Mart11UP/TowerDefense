@@ -124,13 +124,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 877751315196785941, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877751315196785941, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
       propertyPath: m_Height
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877751315196785941, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.088835716
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
@@ -140,27 +150,27 @@ PrefabInstance:
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12
+      value: 10.01
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
@@ -170,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
@@ -184,6 +194,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 582138835468589292, guid: 32349635166d62848ada6e82b48c4818, type: 3}
+    - {fileID: 5638912345049582444, guid: 32349635166d62848ada6e82b48c4818, type: 3}
+    - {fileID: 3124455232670613509, guid: 32349635166d62848ada6e82b48c4818, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4152394346587851156, guid: 32349635166d62848ada6e82b48c4818, type: 3}
     m_AddedGameObjects:
@@ -202,7 +214,7 @@ PrefabInstance:
       addedObject: {fileID: -4744210857691544794}
     - targetCorrespondingSourceObject: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
-      insertIndex: 6
+      insertIndex: 4
       addedObject: {fileID: 6285774137219335842}
     - targetCorrespondingSourceObject: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
@@ -227,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09eff0096137e446b04dc372ffc089a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minWaitTime: 3
-  maxWaitTime: 6
+  minWaitTime: 2
+  maxWaitTime: 3
 --- !u!114 &6285774137219335842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d5ebac8741b9b44b2f5c66b62a7c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 9085153519759196992, guid: d7970260a41d3b2438fa8f72c6ea75ad,
+  bulletPrefab: {fileID: 9090737424683111668, guid: 23d6c20525da42b40a9fcad79dd7abba,
     type: 3}
   fireRate: 1
   shootPoint: {fileID: 7611304510672168739}
@@ -265,9 +277,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!4 &5691499649156314111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,

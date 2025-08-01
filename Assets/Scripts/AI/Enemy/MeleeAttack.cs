@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 namespace Tower.AI.Enemy
 {
+    [RequireComponent(typeof(ForwardRaycast))]
     public class MeleeAttack : Attack
     {
         [SerializeField] private float damage = 1;
@@ -15,14 +16,11 @@ namespace Tower.AI.Enemy
         private Vector3 backPoint;
         private EnemyStateMachine enemyStateMachine;
 
-        private void Awake()
+        private void OnEnable()
         {
             meleeAttackTrigger = GetComponent<ForwardRaycast>();
             agent = GetComponent<NavMeshAgent>();
             enemyStateMachine = GetComponent<EnemyStateMachine>();
-        }
-        private void OnEnable()
-        {
             meleeAttackTrigger.OnTriggered += ChangeToAttackState;
         }
 
@@ -46,12 +44,13 @@ namespace Tower.AI.Enemy
 
         protected override IEnumerator AttackRoutine()
         {
+            yield return new WaitForSeconds(0.5f);
+            agent.enabled = false;
+            yield return gameObject.transform.DOMove(backPoint, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
             while (true)
             {
                 IsAttacking = true;
                 yield return new WaitForSeconds(0.5f);
-
-                agent.enabled = false;
 
                 yield return gameObject.transform.DOMove(attackPoint, 0.5f).SetEase(Ease.InQuint).WaitForCompletion();
                 IsAttacking = meleeAttackTrigger.Triggered;

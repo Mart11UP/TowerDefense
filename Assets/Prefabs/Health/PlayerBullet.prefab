@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3915555563912710254}
   - component: {fileID: 6600466061415540164}
+  - component: {fileID: -4281884975893403297}
   - component: {fileID: 8485773258061927832}
-  - component: {fileID: 7307085600955352232}
+  - component: {fileID: 804466294200200008}
   - component: {fileID: 7820737301593121009}
   - component: {fileID: 5153507281281932855}
   - component: {fileID: 5343851762063527937}
@@ -52,6 +53,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Enemy
   damageAmount: 1
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4281884975893403297}
+        m_TargetAssemblyTypeName: Tower.Health.SmoothDestroy, Tower.Health
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4281884975893403297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085153519759196992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ad256eb5f51c34eb74eaa35a242d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffectPrefab: {fileID: 0}
 --- !u!114 &8485773258061927832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &7307085600955352232
+--- !u!114 &804466294200200008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9085153519759196992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bbd845f15f4f2249b912d00db6a59ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 06ad256eb5f51c34eb74eaa35a242d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffectPrefab: {fileID: 0}

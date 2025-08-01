@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Tower.AI.Enemy
 {
+    [RequireComponent(typeof(EnemyStateMachine))]
     public abstract class Attack : MonoBehaviour
     {
         protected IEnumerator attackRoutine;

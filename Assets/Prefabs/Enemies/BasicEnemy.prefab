@@ -92,10 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3365741951696697940}
+  - component: {fileID: 3277339343315828069}
   - component: {fileID: 531584534299610493}
   - component: {fileID: 5638912345049582444}
   - component: {fileID: 3124455232670613509}
-  - component: {fileID: 3277339343315828069}
   - component: {fileID: 877751315196785941}
   - component: {fileID: 582138835468589292}
   m_Layer: 0
@@ -121,6 +121,18 @@ Transform:
   - {fileID: 2138712243930420977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3277339343315828069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531731496760666251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a4960307d11324f8ec9521ab380038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &531584534299610493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  OnDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5638912345049582444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,18 +179,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &3277339343315828069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6531731496760666251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a4960307d11324f8ec9521ab380038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &877751315196785941
 NavMeshAgent:
   m_ObjectHideFlags: 0

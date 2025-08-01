@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Tower.Health
 {
@@ -9,7 +7,7 @@ namespace Tower.Health
     {
         [SerializeField] private string targetTag = "Enemy";
         [SerializeField] private float damageAmount;
-        public event Action OnTrigger;
+        public UnityEvent OnTrigger;
 
         private void OnTriggerEnter(Collider other)
         {

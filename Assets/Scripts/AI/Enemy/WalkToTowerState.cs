@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,8 +5,8 @@ namespace Tower.AI.Enemy
 {
     public class WalkToTowerState : BaseState<EnemyStateMachine.EnemyState>
     {
-        private GameObject gameObject;
-        private NavMeshAgent agent;
+        private readonly GameObject gameObject;
+        private readonly NavMeshAgent agent;
 
         public WalkToTowerState(EnemyStateMachine.EnemyState key, GameObject gameObject) : base(key)
         {

@@ -14,10 +14,11 @@ namespace Tower.AI.Enemy
         {
             WalkToTower,
             Attack,
-            Died
+            Died,
+            Idle
         }
 
-        void Start()
+        void Awake()
         {
             States.Add(EnemyState.WalkToTower, new WalkToTowerState(EnemyState.WalkToTower, gameObject));
             States.Add(EnemyState.Died, new DiedState(EnemyState.Died, gameObject));
@@ -25,27 +26,27 @@ namespace Tower.AI.Enemy
 
             CurrentState = States[EnemyState.WalkToTower];
             enemyHealth = GetComponent<HealthController>();
-            enemyHealth.OnDied += ChangeToDiedState;
+        }
+
+        private void OnEnable()
+        {
+            enemyHealth.OnDied.AddListener(ChangeToDiedState);
         }
 
         private void OnDisable()
         {
-            enemyHealth.OnDied -= ChangeToDiedState;
+            enemyHealth.OnDied.RemoveListener(ChangeToDiedState);
         }
 
         private void ChangeToDiedState()
         {
-            enemyHealth.OnDied -= ChangeToDiedState;
+            enemyHealth.OnDied.RemoveListener(ChangeToDiedState);
             TransitionToState(EnemyState.Died);
         }
 
         private bool IsAValidState(EnemyState stateKey)
         {
-            if (CurrentState.StateKey == EnemyState.Died)
-            {
-                Debug.LogWarning("Cannot transition to any state while in the '" + EnemyState.Died + "' state.");
-                return false;
-            }
+            if (CurrentState.StateKey == EnemyState.Died) return false;
             if (CurrentState.StateKey == stateKey) return false;
 
             return true;

@@ -5,6 +5,7 @@ using Tower.Generic;
 
 namespace Tower.AI.Enemy
 {
+    [RequireComponent(typeof(Shooter))]
     public class ProjectileAttack : Attack
     {
         [Header("Wait Time Range")]
