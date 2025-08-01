@@ -70,7 +70,7 @@ namespace Tower.AI.Enemy
             agent.ResetPath();
             Vector3 normal = meleeAttackTrigger.LastHitInfo.normal;
             attackPoint = meleeAttackTrigger.LastHitInfo.point + normal * agent.radius;
-            backPoint = gameObject.transform.position + normal * agent.radius + normal * 0.5f;
+            backPoint = gameObject.transform.position + normal * agent.radius;
 
             base.StartAttack();
         }

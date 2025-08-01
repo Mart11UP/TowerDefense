@@ -1,5 +1,6 @@
 using UnityEngine;
 using Tower.Health;
+using Tower.Defense;
 
 namespace Tower.Player
 {
@@ -10,11 +11,15 @@ namespace Tower.Player
         public Vector3 MovementInput { get; private set; }
         private Shooter shooter;
         private CharacterMovement characterMovement;
+        private DefendersManager defendersManager;
+        private PlaceDefenderFeedback placeDefenderFeedback;
 
         void Start()
         {
             shooter = GetComponent<Shooter>();
             characterMovement = GetComponent<CharacterMovement>();
+            defendersManager = FindAnyObjectByType<DefendersManager>();
+            placeDefenderFeedback = FindAnyObjectByType<PlaceDefenderFeedback>();
         }
 
         void Update()
@@ -22,7 +27,9 @@ namespace Tower.Player
             MovementInput = new(Input.GetAxis("Horizontal"), 0, 0);
             characterMovement.MoveCharacter(MovementInput);
 
-            if (Input.GetMouseButtonDown(0)) shooter.Shoot();
+            if (Input.GetMouseButtonDown(0)) defendersManager.PlaceDefenderRequest(Input.mousePosition);
+
+            placeDefenderFeedback.ShowFeedback(Input.mousePosition);
         }
     }
 }

@@ -1,9 +1,9 @@
 {
-    "name": "Tower.Player",
-    "rootNamespace": "Tower.Player",
+    "name": "Tower.Defense",
+    "rootNamespace": "Tower.Defense",
     "references": [
-        "GUID:fb928946758eb7448a6c8dd4dfc82ad6",
-        "GUID:310e86cea0eddda49872c31c95f0da46"
+        "GUID:e22a7c679d17f044dbbe346b7af736b8",
+        "GUID:343882b3a2e63ac49873daf47fc45f8b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

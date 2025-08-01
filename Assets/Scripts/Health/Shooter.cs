@@ -9,11 +9,13 @@ namespace Tower.Health
         [SerializeField] Transform shootPoint;
         private float lastShootTime;
         private float shootCooldown;
+        private Transform instancesContainer;
 
         void Start()
         {
             shootCooldown = 1 / fireRate;
             lastShootTime = -shootCooldown;
+            instancesContainer = new GameObject("Bullets "+name).transform;
         }
 
         public GameObject Shoot()
@@ -21,7 +23,9 @@ namespace Tower.Health
             if (Time.time < lastShootTime + shootCooldown) return null;
 
             lastShootTime = Time.time;
-            return Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            bullet.transform.SetParent(instancesContainer);
+            return bullet;
         }
 
         public void Shoot(float damage)
@@ -31,6 +35,11 @@ namespace Tower.Health
 
             DamageTrigger damageTrigger = bullet.GetComponent<DamageTrigger>();
             damageTrigger.SetDamageAmount(damage);
+        }
+
+        private void OnDestroy()
+        {
+            if (instancesContainer != null) Destroy(instancesContainer.gameObject);
         }
     }
 }

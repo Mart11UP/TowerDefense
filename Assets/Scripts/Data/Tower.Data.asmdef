@@ -1,10 +1,7 @@
 {
-    "name": "Tower.Player",
-    "rootNamespace": "Tower.Player",
-    "references": [
-        "GUID:fb928946758eb7448a6c8dd4dfc82ad6",
-        "GUID:310e86cea0eddda49872c31c95f0da46"
-    ],
+    "name": "Tower.Data",
+    "rootNamespace": "Tower.Data",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -1,6 +1,6 @@
 {
-    "name": "Tower.Towers",
-    "rootNamespace": "Tower.Towers",
+    "name": "Tower.GridSystem",
+    "rootNamespace": "Tower.GridSystem",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
