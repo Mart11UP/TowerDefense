@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Tower.Generic;
+using Tower.Health;
 
 namespace Tower.Player
 {

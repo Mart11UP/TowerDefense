@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Tower.Generic;
+using Tower.Health;
 
 namespace Tower.AI.Enemy
 {
     [RequireComponent(typeof(Shooter))]
     public class ProjectileAttack : Attack
     {
+        [SerializeField] private float projectileDamage = 0.5f;
         [Header("Wait Time Range")]
         [SerializeField] private float minWaitTime = 2;
         [SerializeField] private float maxWaitTime = 3;
@@ -41,7 +42,7 @@ namespace Tower.AI.Enemy
             IsAttacking = true;
             yield return new WaitForSeconds(0.5f);
 
-            shooter.Shoot();
+            shooter.Shoot(projectileDamage);
 
             yield return new WaitForSeconds(1);
             IsAttacking = false;

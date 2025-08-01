@@ -94,7 +94,7 @@ PrefabInstance:
       addedObject: {fileID: 3832015984492804752}
     - targetCorrespondingSourceObject: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
         type: 3}
-      insertIndex: 6
+      insertIndex: 4
       addedObject: {fileID: 8162882453642388769}
     - targetCorrespondingSourceObject: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
         type: 3}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  meleeAttackTrigger: {fileID: 8162882453642388769}
 --- !u!114 &8162882453642388769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  rayColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!65 &8463233716645170557
 BoxCollider:
   m_ObjectHideFlags: 0

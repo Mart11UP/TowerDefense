@@ -26,7 +26,8 @@ namespace Tower.AI.Enemy
         public override void UpdateState(BaseState<EnemyStateMachine.EnemyState> state)
         {
             base.UpdateState(state);
-            agent.SetDestination(gameObject.transform.position + Vector3.back * 10);
+            Physics.Raycast(gameObject.transform.position, Vector3.back, out var hitInfo, 200, LayerMask.NameToLayer("Damagable"));
+            agent.SetDestination(hitInfo.point);
         }
     }
 }

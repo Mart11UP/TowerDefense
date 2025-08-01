@@ -9,6 +9,11 @@ namespace Tower.Health
         [SerializeField] private float damageAmount;
         public UnityEvent OnTrigger;
 
+        public void SetDamageAmount(float damage)
+        {
+            damageAmount = damage;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag(targetTag)) return;

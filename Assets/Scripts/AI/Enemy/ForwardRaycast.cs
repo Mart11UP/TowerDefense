@@ -9,6 +9,7 @@ namespace Tower.AI
         [SerializeField] private Vector3 center;
         [SerializeField] private float maxDistance = 2;
         [SerializeField] private LayerMask layerMask;
+        [SerializeField] private Color rayColor = Color.green;
         public event Action OnTriggered;
         public event Action OnUnTriggered;
         private bool triggered = false;
@@ -37,7 +38,7 @@ namespace Tower.AI
         private void OnDrawGizmos()
         {
             if (Triggered) Gizmos.color = Color.red;
-            else Gizmos.color = Color.green;
+            else Gizmos.color = rayColor;
 
             Gizmos.DrawLine(transform.position + center, transform.position + center + transform.forward * maxDistance);
         }
