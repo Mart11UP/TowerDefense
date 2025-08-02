@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6090369192106904378, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7611304510672168739, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -120,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  meleeAttackTrigger: {fileID: 8162882453642388769}
 --- !u!114 &8162882453642388769
 MonoBehaviour:
   m_ObjectHideFlags: 0

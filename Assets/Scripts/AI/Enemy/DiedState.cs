@@ -25,7 +25,7 @@ namespace Tower.AI.Enemy
         private IEnumerator DieRoutine()
         {
             agent.ResetPath();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             MonoBehaviour.Destroy(gameObject);
         }
 

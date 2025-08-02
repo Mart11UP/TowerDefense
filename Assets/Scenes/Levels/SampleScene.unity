@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c6d4dc209dfc245877cc9854a7eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDelay: 0
 --- !u!1 &671434330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,18 +1988,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d745a00c217c77f4984d95e4b8e34332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAmount: 1
   minWaitTime: 1
   maxWaitTime: 3
-  spawnObjects:
+  playOnAwake: 1
+  spawnObjectData:
   - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
       type: 3}
-    weight: 1
+    weight: 0
   - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
       type: 3}
-    weight: 1
+    weight: 0
   - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
       type: 3}
-    weight: 1
+    weight: 0
 --- !u!4 &1419479890
 Transform:
   m_ObjectHideFlags: 0

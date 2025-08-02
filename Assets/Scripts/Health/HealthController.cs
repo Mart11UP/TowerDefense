@@ -29,7 +29,9 @@ namespace Tower.Health
         {
             CurrentHealth -= amount;
             OnDamageReceived?.Invoke(amount);
-            if (CurrentHealth == 0) OnDied?.Invoke();
+            
+            if (CurrentHealth != 0) return; 
+            OnDied?.Invoke();
             enabled = false;
         }
     }

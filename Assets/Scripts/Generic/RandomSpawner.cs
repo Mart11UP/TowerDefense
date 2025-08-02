@@ -1,37 +1,71 @@
 using System.Collections;
+using Unity.VisualScripting.YamlDotNet.Core;
 using UnityEngine;
 
 namespace Tower.Generic
 {
     public class RandomSpawner : MonoBehaviour
     {
+        [SerializeField] private int spawnAmount = 1;
+        [Space]
         [Header("Wait Time Range")]
         [SerializeField] private float minWaitTime = 5;
         [SerializeField] private float maxWaitTime = 10;
+        [SerializeField] private bool playOnAwake = false;
         private IEnumerator spawnerRoutine;
         private Transform instancesContainer;
 
         [System.Serializable]
-        private struct SpawnObjectData
+        public struct SpawnObjectData
         {
             public GameObject prefab;
             [Range(1, 1000)]
             public float weight;
+            public SpawnObjectData(GameObject prefab, float weight)
+            {
+                this.prefab = prefab; 
+                this.weight = weight;
+            }
         }
 
-        [SerializeField] private SpawnObjectData[] spawnObjects;
+        [SerializeField] private SpawnObjectData[] spawnObjectData;
         private float[] weights;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-            weights = new float[spawnObjects.Length];
-            for (int i = 0; i < spawnObjects.Length; i++)
-                weights[i] = spawnObjects[i].weight;
-
-            spawnerRoutine = SpawnAtRandomIntervals();
-            StartCoroutine(SpawnAtRandomIntervals());
+            if (playOnAwake)
+            {
+                UpdateWeights();
+                spawnerRoutine = SpawnAtRandomIntervals();
+                StartCoroutine(SpawnAtRandomIntervals());
+            }
             instancesContainer = new GameObject("Instances " + name).transform;
+        }
+
+        public void UpdateWeights()
+        {
+            weights = new float[spawnObjectData.Length];
+            for (int i = 0; i < spawnObjectData.Length; i++)
+                weights[i] = spawnObjectData[i].weight;
+        }
+
+        public void SetSpawnData(SpawnObjectData[] spawnData)
+        {
+            spawnObjectData = spawnData;
+            UpdateWeights();
+        }
+
+        public void SetSpawnData(SpawnObjectData spawnData)
+        {
+            SpawnObjectData[] spawnObjects = new SpawnObjectData[1];
+            spawnObjects[0] = spawnData;
+            SetSpawnData(spawnObjects);
+        }
+
+        public void SetSpawnData(GameObject prefab)
+        {
+            SetSpawnData(new SpawnObjectData(prefab, 1));
         }
 
         public void StartSpawner()
@@ -51,22 +85,25 @@ namespace Tower.Generic
                 float waitTime = Random.Range(minWaitTime, maxWaitTime);
                 yield return new WaitForSeconds(waitTime);
 
-                SpawnAtRandomPosition();
+                SpawnAtRandomPosition(spawnAmount);
             }
         }
-        private void SpawnAtRandomPosition()
+        public void SpawnAtRandomPosition(int spawnAmount)
         {
-            float randomX = Random.Range(-transform.localScale.x / 2, transform.localScale.x / 2);
-            float randomY = Random.Range(-transform.localScale.y / 2, transform.localScale.y / 2);
-            float randomZ = Random.Range(-transform.localScale.z / 2, transform.localScale.z / 2);
-            Vector3 randomOffset = new(randomX, randomY, randomZ);
-            Vector3 position = transform.position + randomOffset;
+            for (int i = 0; i < spawnAmount; i++)
+            {
+                float randomX = Random.Range(-transform.localScale.x / 2, transform.localScale.x / 2);
+                float randomY = Random.Range(-transform.localScale.y / 2, transform.localScale.y / 2);
+                float randomZ = Random.Range(-transform.localScale.z / 2, transform.localScale.z / 2);
+                Vector3 randomOffset = new(randomX, randomY, randomZ);
+                Vector3 position = transform.position + randomOffset;
 
-            int index = GetIndexByWeight(weights);
-            GameObject prefab = spawnObjects[index].prefab;
+                int index = GetIndexByWeight(weights);
+                GameObject prefab = spawnObjectData[index].prefab;
 
-            GameObject instance = Instantiate(prefab, position, transform.rotation);
-            instance.transform.SetParent(instancesContainer);
+                GameObject instance = Instantiate(prefab, position, transform.rotation);
+                instance.transform.SetParent(instancesContainer);
+            }
         }
 
         int GetIndexByWeight(float[] weights)
