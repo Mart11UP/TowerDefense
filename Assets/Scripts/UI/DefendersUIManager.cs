@@ -9,6 +9,12 @@ namespace Tower.UI
     public class DefendersUIManager : MonoBehaviour
     {
         [SerializeField] private GameObject defendersButtons;
+        [SerializeField] private Text moneyAmountText;
+        [Header("Default Button Color Block")]
+        [Space]
+        [SerializeField] private ColorBlock defaultButtonColorBlock = ColorBlock.defaultColorBlock;
+        [Header("Selected Button Color Block")]
+        [Space]
         [SerializeField] private ColorBlock selectedButtonColorBlock = ColorBlock.defaultColorBlock;
         private DefendersManager defendersManager;
         private EconomyManager economyManager;
@@ -21,6 +27,7 @@ namespace Tower.UI
             DefendersManager.OnCanAffordChanged += EnableButton;
             defendersManager = FindAnyObjectByType<DefendersManager>();
             economyManager = FindAnyObjectByType<EconomyManager>();
+            economyManager.OnMoneyAmountChanged += UpdateMoneyAmount;
         }
 
         private void OnDisable()
@@ -28,6 +35,7 @@ namespace Tower.UI
             DefendersManager.OnDefenderSelectionRejected -= DeselectButtons;
             DefendersManager.OnDefendersDataUpdated -= UpdateUI;
             DefendersManager.OnCanAffordChanged -= EnableButton;
+            economyManager.OnMoneyAmountChanged -= UpdateMoneyAmount;
         }
 
         private void UpdateUI(DefenderData[] defendersData)
@@ -56,14 +64,14 @@ namespace Tower.UI
             foreach (Button button in defendersButtons.GetComponentsInChildren<Button>())
             {
                 if (button.name == defenderData.Name) button.colors = selectedButtonColorBlock;
-                else button.colors = ColorBlock.defaultColorBlock;
+                else button.colors = defaultButtonColorBlock;
             }
         }
 
         private void DeselectButtons()
         {
             foreach (Button button in defendersButtons.GetComponentsInChildren<Button>())
-                button.colors = ColorBlock.defaultColorBlock;
+                button.colors = defaultButtonColorBlock;
         }
 
         private void EnableButton(DefenderData defenderData, bool enabled)
@@ -72,6 +80,11 @@ namespace Tower.UI
             if (button == null) return;
 
             button.interactable = enabled;
+        }
+
+        private void UpdateMoneyAmount(int lastAmount, int currentAmount)
+        {
+            moneyAmountText.text = currentAmount.ToString();
         }
     }
 }

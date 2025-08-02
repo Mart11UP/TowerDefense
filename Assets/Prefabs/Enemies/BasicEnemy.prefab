@@ -196,8 +196,10 @@ GameObject:
   - component: {fileID: 531584534299610493}
   - component: {fileID: 5638912345049582444}
   - component: {fileID: 3124455232670613509}
+  - component: {fileID: 4492374047498432668}
   - component: {fileID: 877751315196785941}
   - component: {fileID: 582138835468589292}
+  - component: {fileID: 3621114721738217}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -293,6 +295,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   rayColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &4492374047498432668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531731496760666251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ad256eb5f51c34eb74eaa35a242d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffectPrefab: {fileID: 0}
 --- !u!195 &877751315196785941
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -336,3 +351,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3621114721738217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531731496760666251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e37ead9181e9d4b9399e264bfe9bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

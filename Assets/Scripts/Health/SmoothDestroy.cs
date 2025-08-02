@@ -9,8 +9,10 @@ namespace Tower.Health
 
         public void Destroy()
         {
-            foreach (var component in GetComponents<Component>())
-                if (component != this && component != transform) Destroy(component);
+            foreach (var component in GetComponents<MeshRenderer>()) Destroy(component);
+            foreach (var component in GetComponentsInChildren<MeshRenderer>()) Destroy(component);
+            foreach (var component in GetComponents<Collider>()) Destroy(component);
+
             if (destroyEffectPrefab != null) StartCoroutine(DestroyEffect());
 
             StartCoroutine(DestroyDelay(2));

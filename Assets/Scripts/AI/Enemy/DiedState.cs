@@ -7,26 +7,17 @@ namespace Tower.AI.Enemy
 {
     public class DiedState : BaseState<EnemyStateMachine.EnemyState>
     {
-        private NavMeshAgent agent;
-        private GameObject gameObject;
+        private readonly EnemyDie enemyDie;
 
         public DiedState(EnemyStateMachine.EnemyState key, GameObject gameObject) : base(key)
         {
-            this.gameObject = gameObject;
-            agent = gameObject.GetComponent<NavMeshAgent>();
+            enemyDie = gameObject.GetComponent<EnemyDie>();
         }
 
         public override void EnterState()
         {
             base.EnterState();
-            gameObject.GetComponent<EnemyStateMachine>().StartCoroutine(DieRoutine());
-        }
-
-        private IEnumerator DieRoutine()
-        {
-            agent.ResetPath();
-            yield return new WaitForSeconds(0.5f);
-            MonoBehaviour.Destroy(gameObject);
+            enemyDie.StartDeath();
         }
 
         public override EnemyStateMachine.EnemyState GetNextState()

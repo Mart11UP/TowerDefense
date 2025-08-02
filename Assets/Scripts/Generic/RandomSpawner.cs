@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting.YamlDotNet.Core;
 using UnityEngine;
 
 namespace Tower.Generic
@@ -88,8 +87,9 @@ namespace Tower.Generic
                 SpawnAtRandomPosition(spawnAmount);
             }
         }
-        public void SpawnAtRandomPosition(int spawnAmount)
+        public Transform[] SpawnAtRandomPosition(int spawnAmount)
         {
+            Transform[] spawnObjects = new Transform[spawnAmount];
             for (int i = 0; i < spawnAmount; i++)
             {
                 float randomX = Random.Range(-transform.localScale.x / 2, transform.localScale.x / 2);
@@ -103,7 +103,10 @@ namespace Tower.Generic
 
                 GameObject instance = Instantiate(prefab, position, transform.rotation);
                 instance.transform.SetParent(instancesContainer);
+                spawnObjects[i] = instance.transform;
             }
+
+            return spawnObjects;
         }
 
         int GetIndexByWeight(float[] weights)
