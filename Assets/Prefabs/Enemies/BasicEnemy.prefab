@@ -182,7 +182,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 4351603468348814215, guid: 8e7073210dcd0a9448391b351d542082,
     type: 3}
   minAmount: 5
-  maxAmount: 10
+  maxAmount: 15
 --- !u!1 &6531731496760666251
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27abc0101b1dd9e4b9069f877bdbe145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c74c595a57b6b4bb7c0a2129bf74c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
 --- !u!114 &3124455232670613509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 16
   m_AngularSpeed: 120

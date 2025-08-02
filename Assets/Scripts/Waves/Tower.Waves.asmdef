@@ -1,12 +1,9 @@
 {
-    "name": "Tower.UI",
-    "rootNamespace": "Tower.UI",
+    "name": "Tower.Waves",
+    "rootNamespace": "Tower.Waves",
     "references": [
         "GUID:e22a7c679d17f044dbbe346b7af736b8",
-        "GUID:310e86cea0eddda49872c31c95f0da46",
-        "GUID:061c17d957ca54c4dbbdb173dfea7e4c",
-        "GUID:b86b26cd01b8b59469b4441c0d066e90",
-        "GUID:4024080587107cb4e9cb79457a1ec117"
+        "GUID:f5a1a79a2e5bd3842adc012f6daa0955"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

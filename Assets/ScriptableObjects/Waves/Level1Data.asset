@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd95dcd7f65bc3c4593aea931d6d3a81, type: 3}
+  m_Name: Level1Data
+  m_EditorClassIdentifier: 
+  wavesData:
+  - title: Single enemy
+    StartDelay: 3
+    Duration: 2
+    minWaitTime: 1
+    maxWaitTime: 1
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 100
+  - title: First wave
+    StartDelay: 0
+    Duration: 30
+    minWaitTime: 10
+    maxWaitTime: 15
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 1
+  - title: There are different enemies.
+    StartDelay: 5
+    Duration: 30
+    minWaitTime: 10
+    maxWaitTime: 10
+    enemySpawnData:
+    - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      weight: 1
+  - title: A more dangerous horde is approaching.
+    StartDelay: 5
+    Duration: 30
+    minWaitTime: 5
+    maxWaitTime: 10
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 10
+    - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      weight: 2
+  - title: Other enemy
+    StartDelay: 5
+    Duration: 30
+    minWaitTime: 10
+    maxWaitTime: 10
+    enemySpawnData:
+    - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
+        type: 3}
+      weight: 1
+  - title: Be careful.
+    StartDelay: 5
+    Duration: 60
+    minWaitTime: 3
+    maxWaitTime: 6
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 100
+    - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      weight: 8
+    - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
+        type: 3}
+      weight: 5
+  - title: AAAAAAAaaaA!
+    StartDelay: 5
+    Duration: 60
+    minWaitTime: 1
+    maxWaitTime: 3
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 100
+    - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      weight: 50
+    - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
+        type: 3}
+      weight: 25
+  - title: Auxilio!
+    StartDelay: 5
+    Duration: 60
+    minWaitTime: 1
+    maxWaitTime: 2
+    enemySpawnData:
+    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      weight: 100
+    - prefab: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      weight: 50
+    - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
+        type: 3}
+      weight: 90

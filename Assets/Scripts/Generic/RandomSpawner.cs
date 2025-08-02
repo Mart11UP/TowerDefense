@@ -72,6 +72,22 @@ namespace Tower.Generic
             StartCoroutine(spawnerRoutine);
         }
 
+        public void StartSpawner(SpawnObjectData[] spawnData)
+        {
+            SetSpawnData(spawnData);
+            spawnerRoutine = SpawnAtRandomIntervals();
+            StartCoroutine(spawnerRoutine);
+        }
+
+        public void StartSpawner(SpawnObjectData[] spawnData, float minWaitTime, float maxWaitTime)
+        {
+            this.minWaitTime = minWaitTime;
+            this.maxWaitTime = maxWaitTime;
+            SetSpawnData(spawnData);
+            spawnerRoutine = SpawnAtRandomIntervals();
+            StartCoroutine(spawnerRoutine);
+        }
+
         public void StopSpawner()
         {
             StopCoroutine(spawnerRoutine);

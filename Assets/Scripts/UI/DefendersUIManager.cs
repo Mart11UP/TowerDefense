@@ -33,6 +33,7 @@ namespace Tower.UI
         private void OnDisable()
         {
             DefendersManager.OnDefenderSelectionRejected -= DeselectButtons;
+            DefendersManager.OnCurrentDefenderChanged -= SetButtonSelected;
             DefendersManager.OnDefendersDataUpdated -= UpdateUI;
             DefendersManager.OnCanAffordChanged -= EnableButton;
             economyManager.OnMoneyAmountChanged -= UpdateMoneyAmount;
@@ -76,8 +77,7 @@ namespace Tower.UI
 
         private void EnableButton(DefenderData defenderData, bool enabled)
         {
-            Button button = defendersButtons.transform.Find(defenderData.Name).GetComponent<Button>();
-            if (button == null) return;
+            if (!defendersButtons.transform.Find(defenderData.Name).TryGetComponent<Button>(out var button)) return;
 
             button.interactable = enabled;
         }

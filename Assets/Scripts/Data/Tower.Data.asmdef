@@ -1,7 +1,9 @@
 {
     "name": "Tower.Data",
     "rootNamespace": "Tower.Data",
-    "references": [],
+    "references": [
+        "GUID:f5a1a79a2e5bd3842adc012f6daa0955"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27abc0101b1dd9e4b9069f877bdbe145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 35
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -187,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 8370509120742147929, guid: 7f6a1e3958852b24fabd340f59b375b5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.04154733
+      value: 0.08281446
       objectReference: {fileID: 0}
     - target: {fileID: 8370509120742147929, guid: 7f6a1e3958852b24fabd340f59b375b5,
         type: 3}
@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 8370509120742147929, guid: 7f6a1e3958852b24fabd340f59b375b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 1.129
       objectReference: {fileID: 0}
     - target: {fileID: 8370509120742147929, guid: 7f6a1e3958852b24fabd340f59b375b5,
         type: 3}
