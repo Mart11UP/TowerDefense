@@ -38,6 +38,19 @@ namespace Tower.GridSystem
             return true;
         }
 
+        public GameObject InstantiateTile(GameObject tilePrefab, Vector2 screenPoint, out bool instantiated)
+        {
+            GameObject tile = InstantiateTile(tilePrefab, screenPoint);
+            if (tile == null)
+            {
+                instantiated = false;
+                return null;
+            }
+
+            instantiated = true;
+            return tile;
+        }
+
         public GameObject InstantiateTile(GameObject tilePrefab, Vector2 screenPoint)
         {
             if(!GetWorldPosition(screenPoint, out Vector3 worldPosition)) return null;

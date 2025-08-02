@@ -9,7 +9,7 @@ namespace Tower.Data
     {
         public string Name;
         public GameObject prefab;
-        public float Cost = 1;
+        public int Cost = 1;
         public Sprite Icon;
 
         public override bool Equals(object other)

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mamadita
   prefab: {fileID: 7614484234062635633, guid: 267450a8f855a45488dbc2e333dbe524, type: 3}
-  Cost: 35
+  Cost: 1
   Icon: {fileID: 0}

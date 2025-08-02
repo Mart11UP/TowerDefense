@@ -210,7 +210,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
-      insertIndex: 2
+      insertIndex: 3
       addedObject: {fileID: -4744210857691544794}
     - targetCorrespondingSourceObject: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09eff0096137e446b04dc372ffc089a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileDamage: 0.5
   minWaitTime: 2
   maxWaitTime: 3
 --- !u!114 &6285774137219335842

@@ -9,14 +9,12 @@ namespace Tower.Player
     public class InputController : MonoBehaviour
     {
         public Vector3 MovementInput { get; private set; }
-        private Shooter shooter;
         private CharacterMovement characterMovement;
         private DefendersManager defendersManager;
         private PlaceDefenderFeedback placeDefenderFeedback;
 
         void Start()
         {
-            shooter = GetComponent<Shooter>();
             characterMovement = GetComponent<CharacterMovement>();
             defendersManager = FindAnyObjectByType<DefendersManager>();
             placeDefenderFeedback = FindAnyObjectByType<PlaceDefenderFeedback>();

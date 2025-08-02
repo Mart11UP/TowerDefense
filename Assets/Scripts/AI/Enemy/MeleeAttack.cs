@@ -50,7 +50,7 @@ namespace Tower.AI.Enemy
             while (true)
             {
                 IsAttacking = true;
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.25f);
 
                 yield return gameObject.transform.DOMove(attackPoint, 0.5f).SetEase(Ease.InQuint).WaitForCompletion();
                 IsAttacking = meleeAttackTrigger.Triggered;
