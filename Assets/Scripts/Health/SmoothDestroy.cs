@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Tower.Health
@@ -9,9 +10,10 @@ namespace Tower.Health
 
         public void Destroy()
         {
-            foreach (var component in GetComponents<MeshRenderer>()) Destroy(component);
-            foreach (var component in GetComponentsInChildren<MeshRenderer>()) Destroy(component);
-            foreach (var component in GetComponents<Collider>()) Destroy(component);
+            foreach (var component in GetComponents<MeshRenderer>()) component.enabled = false;
+            foreach (var component in GetComponentsInChildren<MeshRenderer>()) component.enabled = false;
+            foreach (var component in GetComponentsInChildren<TextMeshPro>()) component.enabled = false;
+            foreach (var component in GetComponents<Collider>()) component.enabled = false;
 
             if (destroyEffectPrefab != null) StartCoroutine(DestroyEffect());
 

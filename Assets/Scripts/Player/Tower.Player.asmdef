@@ -2,8 +2,8 @@
     "name": "Tower.Player",
     "rootNamespace": "Tower.Player",
     "references": [
-        "GUID:fb928946758eb7448a6c8dd4dfc82ad6",
-        "GUID:310e86cea0eddda49872c31c95f0da46"
+        "GUID:310e86cea0eddda49872c31c95f0da46",
+        "GUID:b65bec9e63f8c3f4e820132b22835174"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

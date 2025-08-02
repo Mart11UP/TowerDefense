@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6600466061415540164}
   - component: {fileID: -4281884975893403297}
   - component: {fileID: 8485773258061927832}
-  - component: {fileID: 804466294200200008}
+  - component: {fileID: 4983156741928828595}
   - component: {fileID: 7820737301593121009}
   - component: {fileID: 5153507281281932855}
   - component: {fileID: 5343851762063527937}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &804466294200200008
+--- !u!114 &4983156741928828595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,10 +103,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9085153519759196992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad256eb5f51c34eb74eaa35a242d24, type: 3}
+  m_Script: {fileID: 11500000, guid: dab474dd5c44c4a48aa4052fdb2fea24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffectPrefab: {fileID: 0}
+  delay: 0.25
+  layer: 7
 --- !u!33 &7820737301593121009
 MeshFilter:
   m_ObjectHideFlags: 0

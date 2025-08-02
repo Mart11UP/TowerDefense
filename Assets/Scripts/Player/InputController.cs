@@ -1,5 +1,5 @@
 using UnityEngine;
-using Tower.Health;
+using Tower.Weapon;
 using Tower.Defense;
 
 namespace Tower.Player

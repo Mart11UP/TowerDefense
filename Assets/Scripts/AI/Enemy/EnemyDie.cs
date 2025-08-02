@@ -27,7 +27,7 @@ namespace Tower.AI.Enemy
         private IEnumerator DeathRoutine()
         {
             agent.ResetPath();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             smoothDestroy.Destroy();
         }
     }

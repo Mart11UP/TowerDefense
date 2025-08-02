@@ -1,0 +1,17 @@
+{
+    "name": "Tower.Weapon",
+    "rootNamespace": "Tower.Weapon",
+    "references": [
+        "GUID:fb928946758eb7448a6c8dd4dfc82ad6",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

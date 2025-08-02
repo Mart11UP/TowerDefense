@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Tower.Health;
+using Tower.Weapon;
 
 namespace Tower.AI.Enemy
 {

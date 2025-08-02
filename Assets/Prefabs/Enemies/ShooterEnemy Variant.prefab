@@ -137,6 +137,11 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1168092767428197780, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3365741951696697940, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -196,6 +201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShooterEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906898311203667010, guid: 32349635166d62848ada6e82b48c4818,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 582138835468589292, guid: 32349635166d62848ada6e82b48c4818, type: 3}

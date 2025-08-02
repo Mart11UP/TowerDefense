@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands.CheckIn.Progress;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Tower.Generic
     public class ForwardMovement : MonoBehaviour
     {
         [SerializeField] private float speed = 10;
+        public float Speed { get { return speed; } set { speed = value; } }
         private Rigidbody rb;
 
         void Start()

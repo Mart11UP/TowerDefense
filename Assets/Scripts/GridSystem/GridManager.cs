@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Tower.GridSystem
 {
+    [RequireComponent(typeof(Grid))]
     public class GridManager : MonoBehaviour
     {
         [SerializeField] private LayerMask layerMask;
