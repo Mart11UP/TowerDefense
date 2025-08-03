@@ -13,7 +13,7 @@ namespace Tower.Waves
         [SerializeField] private float waitTimeBetweenWaves = 10;
         public static event Action<WaveData.SingleWaveData> OnWaveStarted;
         public static event Action<WaveData.SingleWaveData> OnWaveFinished;
-        public static event Action OnLevelFinished;
+        public static event Action OnWavesFinished;
         private RandomSpawner enemySpawner;
 
         // Start is called before the first frame update
@@ -42,7 +42,7 @@ namespace Tower.Waves
                 OnWaveFinished?.Invoke(wave);
             }
 
-            OnLevelFinished?.Invoke();
+            OnWavesFinished?.Invoke();
         }
     }
 }

@@ -7,11 +7,11 @@ namespace Tower.Player
 {
     public class PlayerLost : MonoBehaviour
     {
-        public static event Action OnPlayerLost;
+        public static event Action OnTowerDestroyed;
 
         public void Lost()
         {
-            OnPlayerLost.Invoke();
+            OnTowerDestroyed?.Invoke();
         }
     }
 }

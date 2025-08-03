@@ -1,5 +1,4 @@
 using UnityEngine;
-using Tower.Player;
 using Tower.Waves;
 
 namespace Tower.UI
@@ -11,14 +10,14 @@ namespace Tower.UI
 
         private void OnEnable()
         {
-            PlayerLost.OnPlayerLost += DisplayLostScreen;
-            WaveManager.OnLevelFinished += DisplayWinScreen;
+            GameManager.OnPlayerLost += DisplayLostScreen;
+            GameManager.OnPlayerWin += DisplayWinScreen;
         }
 
         private void OnDisable()
         {
-            PlayerLost.OnPlayerLost -= DisplayLostScreen;
-            WaveManager.OnLevelFinished -= DisplayWinScreen;
+            GameManager.OnPlayerLost -= DisplayLostScreen;
+            GameManager.OnPlayerWin -= DisplayWinScreen;
         }
 
         private void DisplayLostScreen()

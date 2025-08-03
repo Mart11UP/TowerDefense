@@ -3,7 +3,8 @@
     "rootNamespace": "Tower.Waves",
     "references": [
         "GUID:e22a7c679d17f044dbbe346b7af736b8",
-        "GUID:f5a1a79a2e5bd3842adc012f6daa0955"
+        "GUID:f5a1a79a2e5bd3842adc012f6daa0955",
+        "GUID:b86b26cd01b8b59469b4441c0d066e90"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
