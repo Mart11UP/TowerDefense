@@ -32,7 +32,7 @@ MonoBehaviour:
         type: 3}
       weight: 1
   - title: There are different enemies.
-    StartDelay: 5
+    StartDelay: 2
     Duration: 30
     minWaitTime: 10
     maxWaitTime: 10
@@ -41,7 +41,7 @@ MonoBehaviour:
         type: 3}
       weight: 1
   - title: A more dangerous horde is approaching.
-    StartDelay: 5
+    StartDelay: 2
     Duration: 30
     minWaitTime: 5
     maxWaitTime: 10

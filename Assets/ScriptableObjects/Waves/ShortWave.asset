@@ -16,8 +16,8 @@ MonoBehaviour:
   - title: First wave
     StartDelay: 0
     Duration: 10
-    minWaitTime: 10
-    maxWaitTime: 15
+    minWaitTime: 4
+    maxWaitTime: 4
     enemySpawnData:
     - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
         type: 3}

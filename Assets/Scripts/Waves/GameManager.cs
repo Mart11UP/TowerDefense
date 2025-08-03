@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Tower.Waves
@@ -13,23 +14,31 @@ namespace Tower.Waves
         private void OnEnable()
         {
             Player.PlayerLost.OnTowerDestroyed += PlayerLost;
-            WaveManager.OnWavesFinished += PlayerWin;
+            WaveManager.OnWavesFinished += AllEnemiesDeath;
         }
 
         private void OnDisable()
         {
             Player.PlayerLost.OnTowerDestroyed -= PlayerLost;
-            WaveManager.OnWavesFinished -= PlayerWin;
+            WaveManager.OnWavesFinished -= AllEnemiesDeath;
         }
 
-        private void PlayerWin()
+        private void AllEnemiesDeath()
         {
-            SetLevelFinished(OnPlayerWin);
+            StartCoroutine(WaitUntilAllEnemiesDeath());
         }
 
         private void PlayerLost()
         {
             SetLevelFinished(OnPlayerLost);
+        }
+
+        private IEnumerator WaitUntilAllEnemiesDeath()
+        {
+            while (GameObject.FindGameObjectsWithTag("Enemy").Length != 0)
+                yield return new WaitForSeconds(2);
+
+            SetLevelFinished(OnPlayerWin);
         }
 
         private void SetLevelFinished(Action finishEvent)
@@ -40,7 +49,7 @@ namespace Tower.Waves
             finishEvent.Invoke();
 
             Player.PlayerLost.OnTowerDestroyed -= PlayerLost;
-            WaveManager.OnWavesFinished -= PlayerWin;
+            WaveManager.OnWavesFinished -= AllEnemiesDeath;
         }
     }
 }

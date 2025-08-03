@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e13822813d8434b4cbfea4882dead7f6, type: 3}
-  m_Name: MultiplierX3
+  m_Name: MultiplierX5
   m_EditorClassIdentifier: 
   Name: Multiplier X5
   prefab: {fileID: 5410450642671047042, guid: 0f00d2845b7138245a0613559bd1e097, type: 3}
