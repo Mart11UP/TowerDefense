@@ -19,6 +19,6 @@ MonoBehaviour:
     minWaitTime: 4
     maxWaitTime: 4
     enemySpawnData:
-    - prefab: {fileID: 6531731496760666251, guid: 32349635166d62848ada6e82b48c4818,
+    - prefab: {fileID: 3885816600997530361, guid: 29c44e4cd6e9d874288a1bceeebe8862,
         type: 3}
       weight: 1

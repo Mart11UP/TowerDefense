@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: projectileDamage
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1005202810210629097, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.88
+      objectReference: {fileID: 0}
     - target: {fileID: 4245943984278233376, guid: 4434f1e9bcfe0df4f99e3d8d6ddc9361,
         type: 3}
       propertyPath: m_Name
