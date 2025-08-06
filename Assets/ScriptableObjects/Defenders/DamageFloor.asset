@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Damage Floor
   prefab: {fileID: 3171541257397896496, guid: 677e216235481634e8a7b2ef4a9fa0fb, type: 3}
-  Cost: 40
+  Cost: 50
   Icon: {fileID: 0}

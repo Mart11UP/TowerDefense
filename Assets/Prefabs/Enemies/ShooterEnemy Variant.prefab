@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09eff0096137e446b04dc372ffc089a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 0.5
+  projectileDamage: 1
   minWaitTime: 2
   maxWaitTime: 3
 --- !u!114 &6285774137219335842

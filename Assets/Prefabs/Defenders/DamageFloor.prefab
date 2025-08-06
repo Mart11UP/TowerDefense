@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Enemy
-  damageBySecond: 2
+  damageBySecond: 1.5
 --- !u!54 &6010628596669980762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d3769a3cd12484e8270bf6691e0393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 120
+  lifeTime: 50
 --- !u!114 &6826784726081899998
 MonoBehaviour:
   m_ObjectHideFlags: 0

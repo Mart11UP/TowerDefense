@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9085153519759196992, guid: d910b0f163646b447b73f4b8c7476c21,
     type: 3}
-  fireRate: 1
+  fireRate: 1.5
   shootPoint: {fileID: 1320180216}
 --- !u!114 &501035232
 MonoBehaviour:
@@ -3210,7 +3210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveData: {fileID: 11400000, guid: 901557b2b6962c64d9c61041773ba21c, type: 2}
-  waitTimeBetweenWaves: 3
+  waitTimeBetweenWaves: 0
 --- !u!1 &1467377627
 GameObject:
   m_ObjectHideFlags: 0

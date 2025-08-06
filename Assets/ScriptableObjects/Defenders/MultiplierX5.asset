@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Multiplier X5
   prefab: {fileID: 5410450642671047042, guid: 0f00d2845b7138245a0613559bd1e097, type: 3}
-  Cost: 50
+  Cost: 60
   Icon: {fileID: 0}
